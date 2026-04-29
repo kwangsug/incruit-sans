@@ -1,27 +1,28 @@
 # Changelog
 
-## [1.0.0] — 2026-04-28
+## [1.0.0] — 2026-04-29 (revised)
 
-### First production candidate release
+### First production release — Pretendard 단순 리브랜드
 
-**Combined**
-- Hangul: Pretendard Variable (Kil Hyung-jin, OFL 1.1)
-- Latin: Roboto Flex (Christian Robertson, David Berlow / Google, OFL 1.1)
-- Latin gvar delta × 0.70 reduction (visual review optimum for Hangul-Latin balance)
-- em 2048 (no scaling, hinting preserved)
+**Decision rationale**
+세션 중 Source Sans 3, Open Sans, Roboto Flex, Min Sans Latin 결합을 모두 평가한 결과, **Pretendard 자체 디자인이 한글-Latin 균형 가장 자연스러움**. 외부 Latin 결합 시 stroke·자간 미스매치 또는 composite 글리프 가변성 손실이 항상 발생.
 
-**Features**
-- 변형 가능 Latin: 128 글리프 (Basic Latin + Latin-1 Supplement)
-- `tnum` (Tabular Figures) **기본 활성화** — 이력서 표 자동 정렬
-- 한국 이력서 punctuation 완비: `·` `~` `–` `—` `※` `▶` `●` `■` `₩` `%` `℃` `㎡`
-- Stroke 매칭: wght 700 +0.7%, wght 900 -1.5% (거의 완벽)
-- ttfautohint 적용 (4 static TTF, 9pt 인쇄 최적화)
+**Sources (all OFL 1.1)**
+- Hangul + Latin: Pretendard Variable & Static (Copyright 2021 Kil Hyung-jin)
+
+**v1.0 modifications over Pretendard**
+- Family rebrand: "Pretendard" → "Incruit Sans"
+- `tnum` (Tabular Figures) **기본 활성화** (calt에 promote) — 이력서 표 자동 정렬
+- 한국 이력서 punctuation 완비 (Pretendard 그대로 활용)
+- 메타데이터: name table 17개 항목 재작성, 출처 명시
 
 **Outputs**
-- Variable Font: `IncruitSans-Variable.ttf` (6.4M) + `.woff2` (2.0M)
-- Static: Light(300) / Regular(400) / Medium(500) / Bold(700) — TTF + WOFF2
+- Variable Font: `IncruitSans-Variable.{ttf,woff2}` (wght 45→930, 9 instances)
+- Static OTF: `static/IncruitSans-{Light,Regular,Medium,Bold}.{otf,woff2}`
+- Static TTF (hinted, 9pt 인쇄 최적): `static/ttf/IncruitSans-{...}.{ttf,woff2}` — ttfautohint 적용
 
-**Known limitations (v2.0 roadmap)**
-- Composite Latin 60자 (i, j, À-ÿ): VF에서 static (Regular 고정)
-- 한국 punctuation 자체 시각 디자인: 미적용 (Pretendard 기본 사용)
-- ATS 호환 공식 인증: 미실시
+**Roadmap (v2.0+)**
+- 한국 이력서 punctuation 자체 시각 보정 (`·` `~` `–` `※`)
+- Stylistic Sets ss01/ss02 명시적 정의 (보수적 임원 / 표현적 신입 톤)
+- ATS 호환 공식 인증 (인크루트 + 사람인 + 잡코리아)
+- 외주 폰트 엔지니어 영역
