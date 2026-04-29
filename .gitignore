@@ -1,0 +1,29 @@
+# Source font files (downloadable from upstream — not redistributed)
+src/
+
+# Intermediate development builds (only v1.0 is published)
+build/v0.1/
+build/v0.2/
+build/v0.2-poc/
+build/v0.2-ttf/
+build/v0.2-variants/
+build/v0.2-vf/
+build/v0.3-vf/
+build/v0.4-advance-variants/
+build/v0.4-vf/
+build/v0.4-weight-variants/
+build/v0.5-vf/
+build/v0.6-vf/
+build/v0.7-lighter-variants/
+build/v0.7-vf/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
